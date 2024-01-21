@@ -10,8 +10,8 @@ import { Icons } from "@/components/icons";
 
 export function UserAvatar() {
   return (
-    <div className="flex flex-row sm:gap-0 gap-2">
-      <p className="md:text-lg text-xs text-ellipsis overflow-hidden sm:w-60 w-28 line-clamp-1 my-auto font-semibold">Hi, Test Username</p>
+    <div className="flex flex-row hover:bg-gray-100 rounded-md justify-center gap-5 px-4">
+      <p className="md:text-lg text-xs text-ellipsis overflow-hidden line-clamp-1 my-auto font-semibold max-w-56">Hi, Test Username</p>
       <Avatar>
         <AvatarImage alt="Picture" src="/images/avatar.avif" />
       </Avatar>

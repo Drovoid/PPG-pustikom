@@ -4,7 +4,7 @@ export const siteConfig: SiteConfig = {
   name: "PPG",
   description:
     "Pustikom PPG",
-  url: "",
+  url: "/home",
   ogImage: "/images/unj.png",
   links: {
     twitter: "https://twitter.com/shadcn",
