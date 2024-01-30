@@ -73,7 +73,7 @@ const SkYudisiumForm = () => {
             <FormItem>
               <FormLabel>Jabatan Penandatangan</FormLabel>
               <FormControl>
-                <Input type="date" placeholder="Ketikkan Jabatan Pejabat Penandatangan" {...field} />
+                <Input placeholder="Ketikkan Jabatan Pejabat Penandatangan" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -86,7 +86,7 @@ const SkYudisiumForm = () => {
             <FormItem>
               <FormLabel>Nama Lengkap Penandatangan (dengan gelar)</FormLabel>
               <FormControl>
-                <Input type="date" placeholder="Ketikkan Nama Pejabat Penandatangan" {...field} />
+                <Input placeholder="Ketikkan Nama Pejabat Penandatangan" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

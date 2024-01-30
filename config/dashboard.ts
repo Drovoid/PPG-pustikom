@@ -1,7 +1,7 @@
 import { DashboardConfig } from "@/types"
 
 export const dashboardConfig: DashboardConfig = {
-  mainNav: [
+  mainNavAdmin: [
     {
       title: "Home",
       href: "/home",
@@ -9,6 +9,18 @@ export const dashboardConfig: DashboardConfig = {
     {
       title: "SK Yudisium",
       href: "/sk-yudisium",
+    },
+  ],
+  mainNavMhs: [
+    {
+      title: "Pemberkasan",
+      href: "/pemberkasan",
+    },
+  ],
+  mainNavBakhum: [
+    {
+      title: "Transkrip",
+      href: "/transkrip",
     },
   ],
   sidebarNavAdmin: [
@@ -26,8 +38,15 @@ export const dashboardConfig: DashboardConfig = {
   sidebarNavMhs: [
     {
       title: "Pemberkasan",
-      href: "/home",
-      icon: "home",
+      href: "/pemberkasan",
+      icon: "yudisium",
+    },
+  ],
+  sidebarNavBakhum: [
+    {
+      title: "Transkrip",
+      href: "/transkrip",
+      icon: "transcript",
     },
   ],
 }

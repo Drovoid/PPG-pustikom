@@ -1,6 +1,7 @@
 "use client";
 
 import React, { ChangeEvent, useState } from "react";
+import Image from "next/image";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -32,6 +33,10 @@ const PemberkasanForm = () => {
       };
       reader.readAsDataURL(file);
     }
+  };
+
+  const handleRemoveClick = () => {
+    setSelectedFile(null);
   };
 
   const form = useForm<z.infer<typeof pemberkasanSchema>>({
@@ -84,9 +89,33 @@ const PemberkasanForm = () => {
                   type="file"
                   className="file:bg-gray-50 file:text-gray-700 hover:file:bg-gray-100 file:border file:border-solid file:border-gray-700 file:rounded-md border-gray-300"
                   {...field}
+                  onChange={handleFileChange}
                 />
               </FormControl>
-              <FormDescription>Kriteria Foto Sertifikat Pendidik terdapat pada <a href="#petunjuk-pengisian" className="underline">Petunjuk Pengisian</a></FormDescription>
+              {selectedFile && (
+                <div className="mt-2 relative w-full">
+                  <Image
+                    src={selectedFile}
+                    alt="Preview"
+                    width={500}
+                    height={500}
+                    className="mx-auto"
+                  />
+                  <button
+                    onClick={handleRemoveClick}
+                    className="absolute top-0 right-0 rounded-md bg-red-500 text-white py-1 px-2"
+                    aria-label="Remove image"
+                  >
+                    X
+                  </button>
+                </div>
+              )}
+              <FormDescription>
+                Kriteria Foto Sertifikat Pendidik terdapat pada{" "}
+                <a href="#petunjuk-pengisian" className="underline">
+                  Petunjuk Pengisian
+                </a>
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -98,7 +127,11 @@ const PemberkasanForm = () => {
             <FormItem>
               <FormLabel>Nomor Sertifikat Pendidik</FormLabel>
               <FormControl>
-                <Input disabled placeholder="Masukkan Nomor Sertifikat Pendidik" {...field} />
+                <Input
+                  disabled
+                  placeholder="Masukkan Nomor Sertifikat Pendidik"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -111,7 +144,10 @@ const PemberkasanForm = () => {
             <FormItem>
               <FormLabel>Nomor Transkrip Nilai</FormLabel>
               <FormControl>
-                <Input placeholder="Masukkan Nomor Transkrip Nilai" {...field} />
+                <Input
+                  placeholder="Masukkan Nomor Transkrip Nilai"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>

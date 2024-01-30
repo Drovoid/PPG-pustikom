@@ -34,14 +34,38 @@ export type SiteConfig = {
 };
 
 export type DashboardConfig = {
-  mainNav: MainNavItem[];
+  mainNavAdmin: MainNavItem[];
+  mainNavMhs: MainNavItem[];
+  mainNavBakhum: MainNavItem[];
   sidebarNavAdmin: SidebarNavItem[];
   sidebarNavMhs: SidebarNavItem[];
+  sidebarNavBakhum: SidebarNavItem[];
 };
 
 export type SKYudisium = {
+  no: number;
   noSkYudisium: string;
   tanggalSkYudisium: string;
   jabatanPenandatangan: string;
   namaPenandatangan: string;
 };
+
+export type Pendataan = {
+  no: number;
+  nim: string;
+  noSkYudisium: string;
+  namaMahasiswa: string;
+  programStudi: string;
+  pendidikanSebelumnya: string;
+  jalur: string;
+  ipk: number;
+  konfirmasi: boolean;
+}
+
+export type Transkrip = {
+  no: number;
+  namaMahasiswa: string;
+  bidangStudi: string;
+  periodeKelulusan: string;
+  dicetak: number;
+}

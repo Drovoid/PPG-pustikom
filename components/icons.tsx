@@ -1,10 +1,17 @@
 import {
   AlertTriangle,
+  ArrowDown,
+  ArrowUp,
+  ArrowUpDown,
   ArrowRight,
+  ChevronsUpDown,
+  EyeOff,
   Check,
   ChevronLeft,
   ChevronRight,
   ChevronDown,
+  ChevronsLeft,
+  ChevronsRight,
   Command,
   CreditCard,
   File,
@@ -16,6 +23,7 @@ import {
   LucideIcon,
   LucideProps,
   Moon,
+  MoreHorizontal,
   MoreVertical,
   Pizza,
   Plus,
@@ -29,6 +37,7 @@ import {
   GraduationCap,
   Home,
   Copyright,
+  ReceiptText,
 } from "lucide-react";
 
 export type Icon = LucideIcon;
@@ -37,9 +46,17 @@ export const Icons = {
   logo: Command,
   close: X,
   spinner: Loader2,
+  eyeOff: EyeOff,
+  arrowUp: ArrowUp,
+  arrowDown: ArrowDown,
+  arrowUpDown: ArrowUpDown,
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,
   chevronDown: ChevronDown,
+  chevronsLeft: ChevronsLeft,
+  chevronsRight: ChevronsRight,
+  chevronsUpDown: ChevronsUpDown,
+  dotsHorizontal: MoreHorizontal,
   trash: Trash,
   post: FileText,
   page: File,
@@ -60,6 +77,7 @@ export const Icons = {
   yudisium: GraduationCap,
   home: Home,
   copyright: Copyright,
+  transcript: ReceiptText,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
