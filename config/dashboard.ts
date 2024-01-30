@@ -3,25 +3,31 @@ import { DashboardConfig } from "@/types"
 export const dashboardConfig: DashboardConfig = {
   mainNav: [
     {
-      title: "Documentation",
-      href: "/docs",
+      title: "Home",
+      href: "/home",
     },
     {
-      title: "Support",
-      href: "/support",
-      disabled: true,
+      title: "SK Yudisium",
+      href: "/sk-yudisium",
     },
   ],
-  sidebarNav: [
+  sidebarNavAdmin: [
     {
       title: "Home",
-      href: "/",
+      href: "/home",
       icon: "home",
     },
     {
       title: "SK Yudisium",
-      href: "/dashboard/billing",
+      href: "/sk-yudisium",
       icon: "yudisium",
+    },
+  ],
+  sidebarNavMhs: [
+    {
+      title: "Pemberkasan",
+      href: "/home",
+      icon: "home",
     },
   ],
 }

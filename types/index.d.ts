@@ -35,5 +35,13 @@ export type SiteConfig = {
 
 export type DashboardConfig = {
   mainNav: MainNavItem[];
-  sidebarNav: SidebarNavItem[];
+  sidebarNavAdmin: SidebarNavItem[];
+  sidebarNavMhs: SidebarNavItem[];
+};
+
+export type SKYudisium = {
+  noSkYudisium: string;
+  tanggalSkYudisium: string;
+  jabatanPenandatangan: string;
+  namaPenandatangan: string;
 };

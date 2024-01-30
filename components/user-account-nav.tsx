@@ -20,32 +20,33 @@ import { UserAvatar } from "@/components/user-avatar";
 export function UserAccountNav() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>
-        <UserAvatar />
-      </DropdownMenuTrigger>
+      <div className="flex flex-row gap-4">
+        <p className="md:text-base text-xs text-ellipsis overflow-hidden line-clamp-1 my-auto font-semibold sm:max-w-44 max-w-20">
+          Hi, Handrian Wibisono
+        </p>
+        <DropdownMenuTrigger>
+          <UserAvatar />
+        </DropdownMenuTrigger>
+      </div>
       <DropdownMenuContent align="end">
         <div className="flex items-center justify-start gap-2 p-2">
           <div className="flex flex-col space-y-1 leading-none">
-            <p className="font-medium">Test Username</p>
+            <p className="font-medium">Handrian Wibi</p>
             <p className="w-[200px] truncate text-sm text-muted-foreground">
-              test@test.com
+              1313621099
             </p>
           </div>
         </div>
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
-          <Link href="/dashboard">Dashboard</Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href="/dashboard/billing">Billing</Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href="/dashboard/settings">Settings</Link>
+          <Link href="/home">Dashboard</Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="cursor-pointer">
-          <Link href="/login">Sign Out</Link>
-        </DropdownMenuItem>
+        <Link href="/">
+          <DropdownMenuItem className="cursor-pointer">
+            Sign Out
+          </DropdownMenuItem>
+        </Link>
       </DropdownMenuContent>
     </DropdownMenu>
   );

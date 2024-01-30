@@ -29,7 +29,7 @@ export default function LoginPage() {
         <CardHeader>
           <div className="flex flex-row mx-auto space-x-3 sm:mb-0 mb-3">
             <Image
-              src="/unj.png"
+              src="/images/unj.svg"
               alt="Logo UNJ"
               width={50}
               height={50}
