@@ -27,6 +27,8 @@ import {
   MoreVertical,
   Pizza,
   Plus,
+  Pencil,
+  Printer,
   Settings,
   SunMedium,
   Trash,
@@ -58,6 +60,7 @@ export const Icons = {
   chevronsUpDown: ChevronsUpDown,
   dotsHorizontal: MoreHorizontal,
   trash: Trash,
+  edit: Pencil,
   post: FileText,
   page: File,
   media: Image,
@@ -77,6 +80,7 @@ export const Icons = {
   yudisium: GraduationCap,
   home: Home,
   copyright: Copyright,
+  printer: Printer,
   transcript: ReceiptText,
   gitHub: ({ ...props }: LucideProps) => (
     <svg

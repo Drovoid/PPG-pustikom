@@ -3,6 +3,9 @@
 import { Pendataan } from "@/types";
 import { ColumnDef } from "@tanstack/react-table";
 import { DataTableColumnHeader } from "@/components/table-header";
+import { Switch } from "@/components/ui/switch";
+import DeleteButtonAction from "@/components/delete-button";
+import { SelectButtonAction } from "@/components/select-action";
 
 export const columns: ColumnDef<Pendataan>[] = [
   {
@@ -22,6 +25,14 @@ export const columns: ColumnDef<Pendataan>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="No SK Yudisium" />
     ),
+    cell: ({ row }) => {
+      const value: string = row.getValue("noSkYudisium");
+      return (
+        <div className="flex flex-col">
+          <SelectButtonAction noSkYudisium={value} />
+        </div>
+      );
+    },
   },
   {
     accessorKey: "namaMahasiswa",
@@ -58,9 +69,25 @@ export const columns: ColumnDef<Pendataan>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Konfirmasi" />
     ),
+    cell: ({ row }) => {
+      const no = parseFloat(row.getValue("no"));
+
+      return <Switch className="ms-3" />;
+    },
   },
   {
     accessorKey: "aksi",
-    header: "Aksi"
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Aksi" />
+    ),
+    cell: ({ row }) => {
+      const no = parseFloat(row.getValue("no"));
+
+      return (
+        <div>
+          <DeleteButtonAction />
+        </div>
+      );
+    },
   },
 ];

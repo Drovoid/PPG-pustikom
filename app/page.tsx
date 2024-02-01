@@ -19,7 +19,7 @@ import { Icons } from "@/components/icons";
 import UserAuthForm from "@/components/user-auth-form";
 
 export const metadata: Metadata = {
-  title: "Login",
+  title: "Pemberkasan PPG UNJ - Login",
   description: "Login to your account",
 };
 
@@ -49,23 +49,6 @@ export default function LoginPage() {
         </CardHeader>
         <CardContent>
           <UserAuthForm />
-          {/* <div className="flex flex-col space-y-5 w-full mx-auto">
-            <Input
-              id="username"
-              type="text"
-              placeholder="Username"
-              className="sm:w-7/12 mx-auto"
-            />
-            <Input
-              id="password"
-              type="password"
-              placeholder="Password"
-              className="sm:w-7/12 mx-auto"
-            />
-            <Button className="bg-green-700 sm:w-7/12 w-full mx-auto">
-              Login
-            </Button>
-          </div> */}
         </CardContent>
       </Card>
     </div>

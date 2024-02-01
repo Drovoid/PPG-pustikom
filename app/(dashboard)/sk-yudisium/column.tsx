@@ -3,6 +3,8 @@
 import { SKYudisium } from "@/types";
 import { ColumnDef } from "@tanstack/react-table";
 import { DataTableColumnHeader } from "@/components/table-header";
+import { EditButtonDialogAction } from "@/components/edit-form-dialog";
+import DeleteButtonAction from "@/components/delete-button";
 
 export const columns: ColumnDef<SKYudisium>[] = [
   {
@@ -40,5 +42,15 @@ export const columns: ColumnDef<SKYudisium>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Aksi" />
     ),
-  }
+    cell: ({ row }) => {
+      const no = parseFloat(row.getValue("no"));
+
+      return (
+        <div className="flex flex-row gap-3">
+          <EditButtonDialogAction />
+          <DeleteButtonAction />
+        </div>
+      );
+    },
+  },
 ];

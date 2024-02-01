@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
+import { Providers } from "@/util/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -63,7 +64,7 @@ export default function RootLayout({
           fontHeading.variable
         )}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

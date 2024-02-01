@@ -37,7 +37,7 @@ export function DataTableColumnHeader<TData, TValue>({
           >
             <span className="max-w-36 break-words text-wrap text-left">{title}</span>
             {column.getIsSorted() === "desc" ? (
-              <Icons.arrowDown className="ml-2 min-h-4 min-w-4" />
+              <Icons.arrowDown className="ml-2 h-4 w-4" />
             ) : column.getIsSorted() === "asc" ? (
               <Icons.arrowUp className="ml-2 h-4 w-4" />
             ) : (
