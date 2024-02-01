@@ -16,6 +16,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
+import UserAuthForm from "@/components/user-auth-form";
 
 export const metadata: Metadata = {
   title: "Login",
@@ -41,12 +42,14 @@ export default function LoginPage() {
             </CardTitle>
           </div>
           <CardDescription className="text-lg text-red-600 font-semibold sm:text-center text-left tracking-wider">
-            Mahasiswa dapat Login dengan menggunakan <span className="sm:block hidden"></span> username dan password akun
+            Mahasiswa dapat Login dengan menggunakan{" "}
+            <span className="sm:block hidden"></span> username dan password akun
             SIAKAD
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="flex flex-col space-y-5 w-full mx-auto">
+          <UserAuthForm />
+          {/* <div className="flex flex-col space-y-5 w-full mx-auto">
             <Input
               id="username"
               type="text"
@@ -62,7 +65,7 @@ export default function LoginPage() {
             <Button className="bg-green-700 sm:w-7/12 w-full mx-auto">
               Login
             </Button>
-          </div>
+          </div> */}
         </CardContent>
       </Card>
     </div>
