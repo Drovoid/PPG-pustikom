@@ -6,6 +6,7 @@ import { MainNav } from "@/components/main-nav";
 import { DashboardNav } from "@/components/nav";
 import { UserAccountNav } from "@/components/user-account-nav";
 import { SiteFooter } from "@/components/site-footer";
+import Sidebar from "@/components/collapse-sidebar";
 
 interface DashboardLayoutProps {
   children?: React.ReactNode;
@@ -26,7 +27,7 @@ export default async function DashboardLayout({
   var user: User = {
     name: "Fulan bin Fulan",
     nim: "1234567890",
-    role: "Mahasiswa",
+    role: "Admin",
     prodi: "S1 Ilmu Komputer",
     fakultas: "Fakultas Ilmu Komputer",
     status: "Lulus",
@@ -62,9 +63,10 @@ export default async function DashboardLayout({
           <UserAccountNav />
         </div>
       </header>
-      <div className="container grid flex-1 gap-12 md:grid-cols-[200px_1fr] relative">
-        <aside className="sticky top-20 hidden w-[200px] flex-col h-[600px] md:flex rounded-lg backdrop-filter backdrop-blur-lg border-2 border-green-700">
-          <DashboardNav items={sidebarNavItems} />
+      <div className="container grid flex-1 gap-12 md:flex">
+        <aside className="hidden flex-col h-[600px] md:flex sticky top-20">
+          {/* <DashboardNav items={sidebarNavItems} /> */}
+          <Sidebar items={sidebarNavItems} />
         </aside>
         <main className="flex w-full flex-1 flex-col overflow-hidden">
           {children}
