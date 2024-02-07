@@ -22,6 +22,7 @@ import { Input } from "@/components/ui/input";
 
 const PemberkasanForm = () => {
   const [selectedFile, setSelectedFile] = useState<string | null>(null);
+  const [preview, setPreview] = useState<string>("");
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -34,6 +35,21 @@ const PemberkasanForm = () => {
       reader.readAsDataURL(file);
     }
   };
+
+  function getImageData(event: ChangeEvent<HTMLInputElement>) {
+    // FileList is immutable, so we need to create a new one
+    const dataTransfer = new DataTransfer();
+
+    // Add newly uploaded images
+    Array.from(event.target.files!).forEach((image) =>
+      dataTransfer.items.add(image)
+    );
+
+    const files = dataTransfer.files;
+    const displayUrl = URL.createObjectURL(event.target.files![0]);
+
+    return { files, displayUrl };
+  }
 
   const handleRemoveClick = () => {
     setSelectedFile(null);
@@ -80,7 +96,7 @@ const PemberkasanForm = () => {
         <FormField
           control={form.control}
           name="fotoSertifikatPendidik"
-          render={({ field }) => (
+          render={({ field: { onChange, value, ...rest } }) => (
             <FormItem>
               <FormLabel htmlFor="picture">Foto Sertifikat Pendidik</FormLabel>
               <FormControl>
@@ -88,7 +104,7 @@ const PemberkasanForm = () => {
                   id="picture"
                   type="file"
                   className="file:bg-gray-50 file:text-gray-700 hover:file:bg-gray-100 file:border file:border-solid file:border-gray-700 file:rounded-md border-gray-300"
-                  {...field}
+                  {...rest}
                   onChange={handleFileChange}
                 />
               </FormControl>

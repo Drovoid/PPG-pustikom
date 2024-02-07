@@ -19,7 +19,7 @@ interface DashboardNavProps {
 
 const Sidebar = ({ items }: DashboardNavProps) => {
   const path = usePathname();
-  
+
   const [open, setOpen] = useState(false);
 
   if (!items?.length) {
@@ -27,7 +27,7 @@ const Sidebar = ({ items }: DashboardNavProps) => {
   }
 
   return (
-    <div className="flex sticky top-20  ">
+    <div className="flex sticky top-20">
       <div
         className={` ${
           open ? "w-52" : "w-20 "
@@ -41,7 +41,7 @@ const Sidebar = ({ items }: DashboardNavProps) => {
         <nav>
           {items.map((item, index) => {
             const Icon =
-              Icons[(item.icon as keyof typeof Icons) || "arrowRight"]; // Add an index signature to allow indexing with a string
+              Icons[(item.icon as keyof typeof Icons) || "arrowRight"];
             return (
               item.href && (
                 <Link key={index} href={item.disabled ? "/" : item.href}>
@@ -49,7 +49,8 @@ const Sidebar = ({ items }: DashboardNavProps) => {
                     className={cn(
                       "group flex items-center rounded-md p-2 text-md font-medium hover:bg-green-200 hover:text-accent-foreground space-x-4 my-2",
                       path === item.href ? "bg-green-200" : "transparent",
-                      item.disabled && "cursor-not-allowed opacity-80", !open && "justify-center"
+                      item.disabled && "cursor-not-allowed opacity-80",
+                      !open && "justify-center"
                     )}
                   >
                     {!open ? (
@@ -66,7 +67,9 @@ const Sidebar = ({ items }: DashboardNavProps) => {
                     ) : (
                       <>
                         <Icon />
-                        <span className={`origin-left duration-1000`}>
+                        <span
+                          className={`origin-left duration-1000 line-clamp-1`}
+                        >
                           {item.title}
                         </span>
                       </>
