@@ -60,7 +60,7 @@ export type Pendataan = {
   jalur: string;
   ipk: number;
   konfirmasi: boolean;
-}
+};
 
 export type Transkrip = {
   no: number;
@@ -68,4 +68,10 @@ export type Transkrip = {
   bidangStudi: string;
   periodeKelulusan: string;
   dicetak: number;
-}
+};
+
+export type BobotNilai = {
+  tingkatPenugasan: string;
+  nilai: string;
+  bobot: number;
+};
